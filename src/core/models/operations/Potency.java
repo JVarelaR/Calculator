@@ -6,10 +6,16 @@ package core.models.operations;
 
 /**
  *
- * @author RYZEN
+ * @author jregalado
  */
-public abstract class Potency {
-     public static double potency(double a, double b) {
-        return a / b;
+public class Potency implements Operation{
+
+    public Potency() {
+    }
+    
+    
+    @Override
+    public double operate(double num1,double num2) {
+        return Math.pow(num1,num2);
     }
 }

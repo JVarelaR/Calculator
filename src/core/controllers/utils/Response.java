@@ -6,7 +6,7 @@ package core.controllers.utils;
 
 /**
  *
- * @author RYZEN
+ * @author jregalado
  */
 public class Response {
     

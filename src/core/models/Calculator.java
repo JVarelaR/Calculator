@@ -4,26 +4,21 @@
  */
 package core.models;
 
+import core.models.operations.Operation;
+
 /**
  *
  * @author edangulo
  */
 public class Calculator {
-    
-    public double add(double a, double b) {
-        return a + b;
+
+    public Calculator() {
     }
     
-    public double subtract(double a, double b) {
-        return a - b;
-    }
     
-    public double multiply(double a, double b) {
-        return a * b;
-    }
     
-    public double divide(double a, double b) {
-        return a / b;
+    public double operate(Operation operation,double number1, double number2){
+        return operation.operate(number1, number2);
     }
     
 }

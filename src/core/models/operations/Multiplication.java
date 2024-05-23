@@ -6,10 +6,16 @@ package core.models.operations;
 
 /**
  *
- * @author RYZEN
+ * @author jregalado
  */
-public abstract class Multiplication {
-    public static double multiply(double a, double b) {
-        return a * b;
+public class Multiplication implements Operation{
+
+    public Multiplication() {
+    }
+    
+    
+    @Override
+    public double operate(double num1,double num2) {
+        return num1 * num2;
     }
 }

@@ -4,11 +4,12 @@
  */
 package main;
 
+
 import core.views.CalculatorView;
 
 /**
  *
- * @author RYZEN
+ * @author jregalado
  */
 public class Main {
     
@@ -39,7 +40,7 @@ public class Main {
         //</editor-fold>
         //</editor-fold>
         /* Create and display the form */
-
+        
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new CalculatorView().setVisible(true);

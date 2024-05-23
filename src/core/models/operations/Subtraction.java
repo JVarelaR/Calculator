@@ -6,10 +6,16 @@ package core.models.operations;
 
 /**
  *
- * @author RYZEN
+ * @author jregalado
  */
-public abstract class Subtraction {
-    public static double subtract(double a, double b) {
-        return a - b;
+public class Subtraction implements Operation{
+
+    public Subtraction() {
+    }
+    
+    
+    @Override
+    public double operate(double num1,double num2) {
+        return num1 - num2;
     }
 }

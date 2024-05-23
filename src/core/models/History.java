@@ -12,18 +12,18 @@ import java.util.ArrayList;
  */
 public class History {
     
-    private ArrayList<Operation> operations;
+    private ArrayList<OperationRegister> operations;
     private static History instance;
 
     public History() {
         this.operations = new ArrayList<>();
     }
     
-    public void addOperation(Operation operation) {
+    public void addOperation(OperationRegister operation) {
         this.operations.add(operation);
     }
 
-    public ArrayList<Operation> getOperations() {
+    public ArrayList<OperationRegister> getOperations() {
         return operations;
     }
 

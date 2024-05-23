@@ -6,10 +6,12 @@ package core.models.operations;
 
 /**
  *
- * @author RYZEN
+ * @author jregalado
  */
-public abstract class Addition {
-    public static double add(double a, double b){
-        return a + b;
+public class Addition implements Operation{
+
+    @Override
+    public double operate(double num1,double num2) {
+        return num1 + num2;
     }
 }

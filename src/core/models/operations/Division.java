@@ -6,10 +6,16 @@ package core.models.operations;
 
 /**
  *
- * @author RYZEN
+ * @author jregalado
  */
-public abstract class Division {
-    public static double divide(double a, double b) {
-        return a / b;
+public class Division implements Operation{
+
+    public Division() {
+    }
+    
+    
+    @Override
+    public double operate(double num1,double num2) {
+        return num1 / num2;
     }
 }
