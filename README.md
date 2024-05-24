@@ -1,3 +1,3 @@
 # Calculator
-Jhosep Ricardo Varela Regaldo
+Jhosep Ricardo Varela Regalado
 NRC: 2349
