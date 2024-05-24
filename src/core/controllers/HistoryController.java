@@ -20,7 +20,7 @@ public class HistoryController {
         try{
             ArrayList<OperationRegister> operations = new ArrayList<>();
             
-            if(history.getOperations().isEmpty()){
+            if(history.getOperations().size()==0){
                 return new Response("History is empty", Status.NO_CONTENT);
             }
             

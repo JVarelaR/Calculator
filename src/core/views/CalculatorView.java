@@ -234,7 +234,7 @@ public class CalculatorView extends javax.swing.JFrame {
         } else if (response.getStatus() >= 400) {
             JOptionPane.showMessageDialog(null, response.getMessage(), "Error " + response.getStatus(), JOptionPane.WARNING_MESSAGE);
         } else {
-            JOptionPane.showMessageDialog(null, response.getMessage(), "Response Message", JOptionPane.INFORMATION_MESSAGE);
+            
             resultTextField.setText("" + response.getObject());
         }
 
@@ -253,7 +253,7 @@ public class CalculatorView extends javax.swing.JFrame {
         } else if (response.getStatus() >= 400) {
             JOptionPane.showMessageDialog(null, response.getMessage(), "Error " + response.getStatus(), JOptionPane.WARNING_MESSAGE);
         } else {
-            JOptionPane.showMessageDialog(null, response.getMessage(), "Response Message", JOptionPane.INFORMATION_MESSAGE);
+            
             resultTextField.setText("" + response.getObject());
         }
 
@@ -271,7 +271,7 @@ public class CalculatorView extends javax.swing.JFrame {
         } else if (response.getStatus() >= 400) {
             JOptionPane.showMessageDialog(null, response.getMessage(), "Error " + response.getStatus(), JOptionPane.WARNING_MESSAGE);
         } else {
-            JOptionPane.showMessageDialog(null, response.getMessage(), "Response Message", JOptionPane.INFORMATION_MESSAGE);
+            
             resultTextField.setText("" + response.getObject());
         }
     }//GEN-LAST:event_multiplyButtonActionPerformed
@@ -288,13 +288,13 @@ public class CalculatorView extends javax.swing.JFrame {
         } else if (response.getStatus() >= 400) {
             JOptionPane.showMessageDialog(null, response.getMessage(), "Error " + response.getStatus(), JOptionPane.WARNING_MESSAGE);
         } else {
-            JOptionPane.showMessageDialog(null, response.getMessage(), "Response Message", JOptionPane.INFORMATION_MESSAGE);
+            
             resultTextField.setText("" + response.getObject());
         }
     }//GEN-LAST:event_divideButtonActionPerformed
 
     private void potencyButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_potencyButtonActionPerformed
-       Calculator calculator = new Calculator();
+        Calculator calculator = new Calculator();
 
         String number1 = number1TextField.getText();
         String number2 = number2TextField.getText();
@@ -305,7 +305,7 @@ public class CalculatorView extends javax.swing.JFrame {
         } else if (response.getStatus() >= 400) {
             JOptionPane.showMessageDialog(null, response.getMessage(), "Error " + response.getStatus(), JOptionPane.WARNING_MESSAGE);
         } else {
-            JOptionPane.showMessageDialog(null, response.getMessage(), "Response Message", JOptionPane.INFORMATION_MESSAGE);
+
             resultTextField.setText("" + response.getObject());
         }
     }//GEN-LAST:event_potencyButtonActionPerformed
@@ -321,9 +321,21 @@ public class CalculatorView extends javax.swing.JFrame {
         // TODO add your handling code here:
         Response response = HistoryController.getOperations(History.getInstance());
 
-        DefaultListModel model = new DefaultListModel();
-        model.addAll((Collection) response.getObject());
-        operationsList.setModel(model);
+        if (response.getStatus() >= 500) {
+            JOptionPane.showMessageDialog(null, response.getMessage(), "Error " + response.getStatus(), JOptionPane.ERROR_MESSAGE);
+        } else if (response.getStatus() >= 400) {
+            JOptionPane.showMessageDialog(null, response.getMessage(), "Error " + response.getStatus(), JOptionPane.WARNING_MESSAGE);
+        } else {
+            if (response.getStatus() == 204) {
+                JOptionPane.showMessageDialog(null, response.getMessage(), "Response Message", JOptionPane.INFORMATION_MESSAGE);
+            } else {
+                DefaultListModel model = new DefaultListModel();
+                model.addAll((Collection) response.getObject());
+                operationsList.setModel(model);
+            }
+
+        }
+
     }//GEN-LAST:event_updateHistoryButtonActionPerformed
 
     /**
