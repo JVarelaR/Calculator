@@ -20,7 +20,7 @@ public class HistoryController {
         try{
             ArrayList<OperationRegister> operations = new ArrayList<>();
             
-            if(history.getOperations().size()==0){
+            if(history.getOperations().isEmpty()){
                 return new Response("History is empty", Status.NO_CONTENT);
             }
             
@@ -28,7 +28,7 @@ public class HistoryController {
                 operations.add(history.getOperations().get(i));
             }
             
-            return new Response("", Status.OK, operations);
+            return new Response("Operations history updated successfully", Status.OK, operations);
         }catch(Exception ex){
             return new Response("Unexpected error", Status.INTERNAL_SERVER_ERROR);
         }
