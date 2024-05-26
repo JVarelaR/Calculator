@@ -234,7 +234,7 @@ public class CalculatorView extends javax.swing.JFrame {
         } else if (response.getStatus() >= 400) {
             JOptionPane.showMessageDialog(null, response.getMessage(), "Error " + response.getStatus(), JOptionPane.WARNING_MESSAGE);
         } else {
-            
+            JOptionPane.showMessageDialog(null, response.getMessage(), "Response Message", JOptionPane.INFORMATION_MESSAGE);
             resultTextField.setText("" + response.getObject());
         }
 
@@ -253,7 +253,7 @@ public class CalculatorView extends javax.swing.JFrame {
         } else if (response.getStatus() >= 400) {
             JOptionPane.showMessageDialog(null, response.getMessage(), "Error " + response.getStatus(), JOptionPane.WARNING_MESSAGE);
         } else {
-            
+            JOptionPane.showMessageDialog(null, response.getMessage(), "Response Message", JOptionPane.INFORMATION_MESSAGE);
             resultTextField.setText("" + response.getObject());
         }
 
@@ -271,7 +271,7 @@ public class CalculatorView extends javax.swing.JFrame {
         } else if (response.getStatus() >= 400) {
             JOptionPane.showMessageDialog(null, response.getMessage(), "Error " + response.getStatus(), JOptionPane.WARNING_MESSAGE);
         } else {
-            
+            JOptionPane.showMessageDialog(null, response.getMessage(), "Response Message", JOptionPane.INFORMATION_MESSAGE);
             resultTextField.setText("" + response.getObject());
         }
     }//GEN-LAST:event_multiplyButtonActionPerformed
@@ -288,7 +288,7 @@ public class CalculatorView extends javax.swing.JFrame {
         } else if (response.getStatus() >= 400) {
             JOptionPane.showMessageDialog(null, response.getMessage(), "Error " + response.getStatus(), JOptionPane.WARNING_MESSAGE);
         } else {
-            
+            JOptionPane.showMessageDialog(null, response.getMessage(), "Response Message", JOptionPane.INFORMATION_MESSAGE);
             resultTextField.setText("" + response.getObject());
         }
     }//GEN-LAST:event_divideButtonActionPerformed
@@ -305,7 +305,7 @@ public class CalculatorView extends javax.swing.JFrame {
         } else if (response.getStatus() >= 400) {
             JOptionPane.showMessageDialog(null, response.getMessage(), "Error " + response.getStatus(), JOptionPane.WARNING_MESSAGE);
         } else {
-
+            JOptionPane.showMessageDialog(null, response.getMessage(), "Response Message", JOptionPane.INFORMATION_MESSAGE);
             resultTextField.setText("" + response.getObject());
         }
     }//GEN-LAST:event_potencyButtonActionPerformed
@@ -329,6 +329,7 @@ public class CalculatorView extends javax.swing.JFrame {
             if (response.getStatus() == 204) {
                 JOptionPane.showMessageDialog(null, response.getMessage(), "Response Message", JOptionPane.INFORMATION_MESSAGE);
             } else {
+                JOptionPane.showMessageDialog(null, response.getMessage(), "Response Message", JOptionPane.INFORMATION_MESSAGE);
                 DefaultListModel model = new DefaultListModel();
                 model.addAll((Collection) response.getObject());
                 operationsList.setModel(model);
